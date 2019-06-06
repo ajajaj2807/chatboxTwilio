@@ -5,6 +5,14 @@ twilio-chat-demo-js
 
 ##### Set credentials
 
+Clone the repo by running the command: 
+
+```
+$ git clone https://github.com/ajajaj2807/chatboxTwilio
+```
+
+##### Set credentials
+
 1. Make a file in server.js directory and name it `credentials.json`
 2. Plug your credentials into `credentials.json`
 
