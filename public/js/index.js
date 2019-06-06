@@ -100,14 +100,16 @@ $(document).ready(function() {
     });
   });
 
-  $('#add-button').on('click', function() {
+  $('#add-button').on('click', AddUser );
+
+  function AddUser() {
     var identity = $('#add-identity').val();
     identity && activeChannel.add(identity).then(function() {
       $('#add-member').hide();
       $('#overlay').hide();
       $('#add-identity').val('');
     });
-  });
+  }
 
   $('#invite-member .remove-button').on('click', function() {
     $('#invite-member').hide();
@@ -148,6 +150,11 @@ $(document).ready(function() {
       $('#overlay').hide();
       return channel.join();
     }).then(setActiveChannel);
+
+    activeChannel.add(friendlyName).then(() => {
+      console.log('added new user')
+    })
+
   });
 
   $('#update-channel-submit').on('click', function() {
